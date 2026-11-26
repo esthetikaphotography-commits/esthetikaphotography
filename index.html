@@ -16,355 +16,115 @@
             --texto-gris: #4A5568;
             --blanco: #FFFFFF;
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--fondo-crema); color: var(--texto-gris); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--azul-marca); font-weight: 600; }
+        .script-font { font-family: 'Great Vibes', cursive; color: var(--azul-marca); font-weight: 400; }
+        header { background-color: var(--blanco); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(92, 118, 146, 0.08); position: sticky; top: 0; z-index: 100; }
+        .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 3px; color: var(--azul-marca); text-decoration: none; text-transform: uppercase; font-weight: 600; }
+        nav a { margin-left: 20px; text-decoration: none; color: var(--texto-gris); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
+        .hero { text-align: center; padding: 60px 20px; background: linear-gradient(180deg, #FFFFFF 0%, var(--azul-suave) 100%); }
+        .hero-logo { max-width: 260px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(92, 118, 146, 0.12); }
+        .hero h1 { font-size: 2.8rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 5px; }
+        .hero .tagline { font-size: 2.3rem; margin-bottom: 15px; }
+        .badge-trust { display: inline-block; background: var(--blanco); color: var(--azul-oscuro); padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; margin-bottom: 20px; }
+        .hero p { max-width: 650px; margin: 0 auto 30px; font-size: 0.95rem; }
+        .btn-whatsapp { display: inline-block; background-color: var(--azul-marca); color: var(--blanco); padding: 14px 34px; border-radius: 30px; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        .special-services { background: var(--blanco); padding: 30px 8%; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; border-bottom: 1px solid var(--azul-suave); }
+        .service-pill { background: var(--azul-suave); color: var(--azul-oscuro); padding: 10px 20px; border-radius: 25px; font-size: 0.85rem; font-weight: 500; }
+        section { padding: 60px 6%; }
+        .section-title { text-align: center; margin-bottom: 35px; }
+        .section-title h2 { font-size: 2.5rem; letter-spacing: 2px; text-transform: uppercase; }
+        .section-title span { font-size: 2rem; display: block; margin-top: -5px; }
+        .filter-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 40px; }
+        .filter-btn { background: var(--blanco); border: 1px solid var(--azul-marca); color: var(--azul-marca); padding: 8px 18px; border-radius: 20px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 500; }
+        .filter-btn.active, .filter-btn:hover { background: var(--azul-marca); color: var(--blanco); }
+        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px; }
+        .card { background: var(--blanco); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04); border: 1px solid rgba(92, 118, 146, 0.15); display: flex; flex-direction: column; }
+        .card.hidden { display: none; }
+        .card img { width: 100%; height: 230px; object-fit: cover; }
+        .card-body { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-category { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; color: var(--azul-marca); margin-bottom: 4px; }
+        .card h3 { font-size: 1.75rem; margin-bottom: 8px; }
+        .price { font-size: 1.65rem; font-weight: 600; color: var(--azul-marca); margin-bottom: 14px; font-family: 'Cormorant Garamond', serif; }
+        .card ul { list-style: none; margin-bottom: 22px; font-size: 0.85rem; }
+        .card ul li { padding: 5px 0; border-bottom: 1px solid #F0F4F8; }
+        .card ul li::before { content: "♡ "; color: var(--azul-marca); }
+        .card.rose h3, .card.rose .price, .card.rose ul li::before { color: var(--rosa-acento); }
+        .card.rose .btn-card { border-color: var(--rosa-acento); color: var(--rosa-acento); }
+        .card.gold h3, .card.gold .price, .card.gold ul li::before { color: var(--dorado-acento); }
+        .card.gold .btn-card { border-color: var(--dorado-acento); color: var(--dorado-acento); }
+        .btn-card { display: block; text-align: center; padding: 11px; border: 1px solid var(--azul-marca); color: var(--azul-marca); text-decoration: none; border-radius: 25px; font-size: 0.82rem; font-weight: 500; }
+        .info-band { background-color: var(--azul-suave); }
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; text-align: center; }
+        .step-box { background: var(--blanco); padding: 30px 20px; border-radius: 15px; }
+        .step-number { display: inline-block; width: 40px; height: 40px; line-height: 40px; background: var(--azul-marca); color: var(--blanco); border-radius: 50%; font-weight: 600; margin-bottom: 15px; }
+        .payment-methods { margin-top: 45px; background: var(--blanco); padding: 35px; border-radius: 16px; text-align: center; }
+        .payment-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 20px; }
+        .tag { background: var(--azul-suave); color: var(--azul-oscuro); padding: 8px 18px; border-radius: 20px; font-size: 0.84rem; font-weight: 500; }
+        footer { background-color: var(--azul-marca); color: var(--blanco); text-align: center; padding: 50px 20px; }
+        .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 25px 0; font-size: 0.9rem; }
+        .contact-links a { color: var(--blanco); text-decoration: none; background: rgba(255,255,255,0.12); padding: 10px 20px; border-radius: 25px; }
+        footer p { font-size: 0.85rem; opacity: 0.9; margin-top: 8px; }
+        .float-wa { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: white; padding: 14px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; z-index: 1000; }
+        @media (max-width: 768px) { nav { display: none; } .hero h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="brand-name">Esthétika</a>
+        <nav>
+            <a href="#paquetes">Paquetes</a>
+            <a href="#como-comprar">¿Cómo reservar?</a>
+            <a href="#pagos">Formas de pago</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <section class="hero">
+        <img src="img/logo.png" alt="Esthétika Photography Logo" class="hero-logo">
+        <h1>Esthétika Photography</h1>
+        <div class="tagline script-font">Somos una vez en la vida</div>
+        <div class="badge-trust">★ Recomendado por el 100% de nuestros clientes • CDMX y Área Metropolitana</div>
+        <p>Tu historia merece ser recordada. Capturamos momentos reales con asesoría personalizada en todo momento y cobertura sin costo extra en CDMX y área metropolitana*.</p>
+        <a href="https://wa.me" target="_blank" class="btn-whatsapp">Cotizar mi fecha por WhatsApp</a>
+    </section>
 
-        html {
-            scroll-behavior: smooth;
-        }
+    <div class="special-services">
+        <span class="service-pill">📷 Fotografía Profesional</span>
+        <span class="service-pill">🎥 Video Cinematográfico</span>
+        <span class="service-pill">🚁 Tomas con Dron</span>
+        <span class="service-pill">🔄 Recorridos Virtuales 360°</span>
+        <span class="service-pill">✨ Eventos Sociales</span>
+    </div>
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--fondo-crema);
-            color: var(--texto-gris);
-            line-height: 1.6;
-        }
+    <section id="paquetes">
+        <div class="section-title">
+            <h2>Catálogo de Paquetes</h2>
+            <span class="script-font">Capturamos historias reales</span>
+        </div>
 
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--azul-marca);
-            font-weight: 600;
-        }
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterPackages('todos', this)">Todos (19)</button>
+            <button class="filter-btn" onclick="filterPackages('maternidad', this)">Maternidad y Bebés</button>
+            <button class="filter-btn" onclick="filterPackages('familia', this)">Familia, Parejas y Mascotas</button>
+            <button class="filter-btn" onclick="filterPackages('cumple', this)">Cumpleaños y Graduación</button>
+            <button class="filter-btn" onclick="filterPackages('eventos', this)">XV Años, Bodas y Eventos</button>
+        </div>
 
-        .script-font {
-            font-family: 'Great Vibes', cursive;
-            color: var(--azul-marca);
-            font-weight: 400;
-        }
-
-        /* Navegación */
-        header {
-            background-color: var(--blanco);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 15px rgba(92, 118, 146, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .brand-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            letter-spacing: 3px;
-            color: var(--azul-marca);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: var(--texto-gris);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--azul-marca);
-        }
-
-        /* Hero / Portada */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(180deg, #FFFFFF 0%, var(--azul-suave) 100%);
-        }
-
-        .hero-logo {
-            max-width: 260px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 25px rgba(92, 118, 146, 0.12);
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        .hero .tagline {
-            font-size: 2.3rem;
-            margin-bottom: 15px;
-        }
-
-        .badge-trust {
-            display: inline-block;
-            background: var(--blanco);
-            color: var(--azul-oscuro);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            font-size: 0.95rem;
-        }
-
-        .btn-whatsapp {
-            display: inline-block;
-            background-color: var(--azul-marca);
-            color: var(--blanco);
-            padding: 14px 34px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            font-weight: 500;
-            transition: background 0.3s, transform 0.2s;
-            box-shadow: 0 4px 15px rgba(92, 118, 146, 0.3);
-        }
-
-        .btn-whatsapp:hover {
-            background-color: var(--azul-oscuro);
-            transform: translateY(-2px);
-        }
-
-        /* Servicios Especiales (Dron, 360, Video) */
-        .special-services {
-            background: var(--blanco);
-            padding: 35px 8%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            border-bottom: 1px solid var(--azul-suave);
-        }
-
-        .service-pill {
-            background: var(--azul-suave);
-            color: var(--azul-oscuro);
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        /* Secciones Generales */
-        section {
-            padding: 65px 6%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .section-title span {
-            font-size: 2rem;
-            display: block;
-            margin-top: -5px;
-        }
-
-        /* Filtros de Paquetes */
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 40px;
-        }
-
-        .filter-btn {
-            background: var(--blanco);
-            border: 1px solid var(--azul-marca);
-            color: var(--azul-marca);
-            padding: 8px 18px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--azul-marca);
-            color: var(--blanco);
-        }
-
-        /* Grid de Paquetes */
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 28px;
-        }
-
-        .card {
-            background: var(--blanco);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(92, 118, 146, 0.15);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s;
-        }
-
-        .card.hidden {
-            display: none;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 230px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 24px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card-category {
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--azul-marca);
-            margin-bottom: 4px;
-        }
-
-        .card h3 {
-            font-size: 1.75rem;
-            margin-bottom: 8px;
-        }
-
-        .price {
-            font-size: 1.65rem;
-            font-weight: 600;
-            color: var(--azul-marca);
-            margin-bottom: 14px;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .card ul {
-            list-style: none;
-            margin-bottom: 22px;
-            font-size: 0.85rem;
-        }
-
-        .card ul li {
-            padding: 5px 0;
-            border-bottom: 1px solid #F0F4F8;
-        }
-
-        .card ul li::before {
-            content: "♡ ";
-            color: var(--azul-marca);
-        }
-
-        /* Variantes de color según temática */
-        .card.rose h3, .card.rose .price, .card.rose ul li::before {
-            color: var(--rosa-acento);
-        }
-        .card.rose .btn-card {
-            border-color: var(--rosa-acento);
-            color: var(--rosa-acento);
-        }
-        .card.rose .btn-card:hover {
-            background: var(--rosa-acento);
-            color: var(--blanco);
-        }
-
-        .card.gold h3, .card.gold .price, .card.gold ul li::before {
-            color: var(--dorado-acento);
-        }
-        .card.gold .btn-card {
-            border-color: var(--dorado-acento);
-            color: var(--dorado-acento);
-        }
-        .card.gold .btn-card:hover {
-            background: var(--dorado-acento);
-            color: var(--blanco);
-        }
-
-        .btn-card {
-            display: block;
-            text-align: center;
-            padding: 11px;
-            border: 1px solid var(--azul-marca);
-            color: var(--azul-marca);
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.82rem;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .btn-card:hover {
-            background: var(--azul-marca);
-            color: var(--blanco);
-        }
-
-        /* Cómo Comprar & Formas de Pago */
-        .info-band {
-            background-color: var(--azul-suave);
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            text-align: center;
-        }
-
-        .step-box {
-            background: var(--blanco);
-            padding: 30px 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        }
-
-        .step-number {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            background: var(--azul-marca);
-            color: var(--blanco);
-            border-radius: 50%;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .payment-methods {
-            margin-top: 45px;
+        <div class="packages-grid">
+            <div class="card" data-category="maternidad"><img src="img/maternidad.jpg" alt="Bebé a bordo"><div class="card-body"><div><div class="card-category">Paquete Maternidad</div><h3>Bebé a bordo</h3><div class="price">$1,199.00 MXN</div><ul><li>1 hr de sesión fotográfica</li><li>40 archivos digitales</li><li>Préstamo de vestuario y accesorios</li><li>Álbum artesanal y Set decorativo</li></ul></div><a href="https://wa.me" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card" data-category="maternidad"><img src="img/recien-nacido.jpg" alt="Recién Nacido"><div class="card-body"><div><div class="card-category">Paquete Recién Nacido</div><h3>Recién Nacido</h3><div class="price">$1,799.00 MXN</div><ul><li>1 hr de sesión fotográfica</li><li>30 archivos digitales (alta resolución)</li><li>Álbum artesanal y Set decorativo</li></ul></div><a href="https://wa.me" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card" data-category="maternidad"><img src="img/nueva-vida.jpg" alt="Nueva Vida"><div class="card-body"><div><div class="card-category">Maternidad + Recién Nacido</div><h3>Nueva Vida</h3><div class="price">$2,799.00 MXN</div><ul><li>2 sesiones de 1 hr (bebé a bordo y recién nacido)</li><li>60 archivos digitales (alta resolución)</li><li>Préstamo de vestuario, Álbum y Set</li></ul></div><a href="https://wa.me" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card" data-category="maternidad"><img src="img/smashcake.jpg" alt="Smashcake"><div class="card-body"><div><div class="card-category">Primer Año</div><h3>Smashcake</h3><div class="price">$1,699.00 MXN</div><ul><li>1 hr de sesión fotográfica</li><li>30 archivos digitales (alta resolución)</li><li>Escenario temático, pastel, Álbum y Set</li></ul></div><a href="https://wa.me" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card" data-category="familia"><img src="img/familiar.jpg" alt="Familiar"><div class="card-body"><div><div class="card-category">Paquete Fotográfico</div><h3>Familiar</h3><div class="price">$1,199.00 MXN</div><ul><li>1 hr de sesión fotográfica</li><li>40 archivos digitales</li><li>Álbum artesanal y Set decorativo</li></ul></div><a href="https://wa.me" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card" data-category="familia"><img src="img/familiar-plus.jpg" alt="Familiar Plus"><div class="card-body"><div><div class="card-category">Paquete Fotográfico</div><h3>Familiar Plus</h3><div class="price">$1,699.00 MXN</div><ul><li>1 hr de sesión (hasta 8 personas)</li><li>40 archivos digitales (alta resolución)</li><li>Álbum artesanal y Set decorativo</li></ul></div><a href="https://wa.me%20Plus" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card rose" data-category="familia"><img src="img/nuestra-historia.jpg" alt="Nuestra Historia"><div class="card-body"><div><div class="card-category">Paquete Parejas</div><h3>Nuestra Historia</h3><div class="price">$1,199.00 MXN</div><ul><li>1 hr de sesión fotográfica</li><li>40 archivos digitales</li><li>Álbum artesanal y Set decorativo</li></ul></div><a href="https://wa.me" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card" data-category="familia"><img src="img/huellitas.jpg" alt="Huellitas"><div class="card-body"><div><div class="card-category">Paquete Mascotas</div><h3>Huellitas</h3><div class="price">$1,199.00 MXN</div><ul><li>1 hr de sesión (2 personas + 1 mascota)</li><li>40 archivos digitales</li><li>Álbum artesanal y Set decorativo</li></ul></div><a href="https://wa.me" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card rose" data-category="cumple"><img src="img/mananitas.jpg" alt="Mañanitas"><div class="card-body"><div><div class="card-category">Paquete Cumpleaños</div><h3>Mañanitas</h3><div class="price">$1,199.00 MXN</div><ul><li>1 hr de sesión (hasta 2 personas)</li><li>30 archivos digitales (alta resolución)</li><li>Álbum artesanal y Set decorativo</li></ul></div><a href="https://wa.me" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card rose" data-category="cumple"><img src="img/mananitas-plus.jpg" alt="Mañanitas Plus"><div class="card-body"><div><div class="card-category">Paquete Cumpleaños</div><h3>Mañanitas Plus</h3><div class="price">$1,699.00 MXN</div><ul><li>1 hr de sesión (hasta 4 personas)</li><li>30 archivos digitales + 2 globos + 1 vela humo</li><li>Álbum artesanal y Set decorativo</li></ul></div><a href="https://wa.me%20Plus" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card" data-category="cumple"><img src="img/graduacion.jpg" alt="Graduación"><div class="card-body"><div><div class="card-category">Paquete Escolar</div><h3>Graduación</h3><div class="price">$1,299.00 MXN</div><ul><li>1 hr de sesión fotográfica</li><li>40 archivos digitales</li><li>Préstamo de toga, birrete, Álbum y Set</li></ul></div><a href="https://wa.me" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card rose" data-category="eventos"><img src="img/xv-basico.jpg" alt="XV Años"><div class="card-body"><div><div class="card-category">Sesión Fotográfica</div><h3>XV Años</h3><div class="price">$1,799.00 MXN</div><ul><li>1 hr de sesión fotográfica</li><li>40 archivos digitales</li><li>Préstamo vestuario, Álbum y Stickers</li></ul></div><a href="https://wa.me" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card rose" data-category="eventos"><img src="img/xv-plus.jpg" alt="XV Años Plus"><div class="card-body"><div><div class="card-category">Cobertura de Evento</div><h3>XV Años Plus</h3><div class="price">$4,799.00 MXN</div><ul><li>6 hr de evento fotográfico</li><li>200 archivos digitales + Video 25 min</li><li>Álbum artesanal y Set de stickers</li></ul></div><a href="https://wa.me%20Plus" target="_blank" class="btn-card">Apartar fecha</a></div></div>
+            <div class="card rose" data-category="eventos"><img src="img/xv-premium.jpg" alt="XV Años Premium"><div class="card-body"><div><div class="card-category">Sesión + Evento Completo</div><h3>XV Años Premium</h3><div class="price">$7,099.00 MXN</div><ul><li>1 hr sesión + 5 hr de evento</li><li>200 archivos + Video 25 min + Impresiones</li><li>Préstamo vestuario, Álbum, Set e Invitación</li></ul></div><a href="https://wa.me%20Premium" target="_blank" class="btn-card">Apartar fecha</a></div></div>
