@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esthétika Photography | Somos una vez en la vida</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --azul-marca: #5C7692;
+            --azul-oscuro: #43586E;
+            --azul-suave: #EBF0F5;
+            --rosa-acento: #A65A7A;
+            --dorado-acento: #8C734B;
+            --fondo-crema: #FAFBFD;
+            --texto-gris: #4A5568;
+            --blanco: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--fondo-crema);
+            color: var(--texto-gris);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--azul-marca);
+            font-weight: 600;
+        }
+
+        .script-font {
+            font-family: 'Great Vibes', cursive;
+            color: var(--azul-marca);
+            font-weight: 400;
+        }
+
+        /* Navegación */
+        header {
+            background-color: var(--blanco);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(92, 118, 146, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            color: var(--azul-marca);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--texto-gris);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--azul-marca);
+        }
+
+        /* Hero / Portada */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #FFFFFF 0%, var(--azul-suave) 100%);
+        }
+
+        .hero-logo {
+            max-width: 260px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(92, 118, 146, 0.12);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .hero .tagline {
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+        }
+
+        .badge-trust {
+            display: inline-block;
+            background: var(--blanco);
+            color: var(--azul-oscuro);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            font-size: 0.95rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: var(--azul-marca);
+            color: var(--blanco);
+            padding: 14px 34px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(92, 118, 146, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--azul-oscuro);
+            transform: translateY(-2px);
+        }
+
+        /* Servicios Especiales (Dron, 360, Video) */
+        .special-services {
+            background: var(--blanco);
+            padding: 35px 8%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 1px solid var(--azul-suave);
+        }
+
+        .service-pill {
+            background: var(--azul-suave);
+            color: var(--azul-oscuro);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Secciones Generales */
+        section {
+            padding: 65px 6%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-title span {
+            font-size: 2rem;
+            display: block;
+            margin-top: -5px;
+        }
+
+        /* Filtros de Paquetes */
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: var(--blanco);
+            border: 1px solid var(--azul-marca);
+            color: var(--azul-marca);
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--azul-marca);
+            color: var(--blanco);
+        }
+
+        /* Grid de Paquetes */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 28px;
+        }
+
+        .card {
+            background: var(--blanco);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(92, 118, 146, 0.15);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s;
+        }
+
+        .card.hidden {
+            display: none;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-category {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--azul-marca);
+            margin-bottom: 4px;
+        }
+
+        .card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 1.65rem;
+            font-weight: 600;
+            color: var(--azul-marca);
+            margin-bottom: 14px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-bottom: 22px;
+            font-size: 0.85rem;
+        }
+
+        .card ul li {
+            padding: 5px 0;
+            border-bottom: 1px solid #F0F4F8;
+        }
+
+        .card ul li::before {
+            content: "♡ ";
+            color: var(--azul-marca);
+        }
+
+        /* Variantes de color según temática */
+        .card.rose h3, .card.rose .price, .card.rose ul li::before {
+            color: var(--rosa-acento);
+        }
+        .card.rose .btn-card {
+            border-color: var(--rosa-acento);
+            color: var(--rosa-acento);
+        }
+        .card.rose .btn-card:hover {
+            background: var(--rosa-acento);
+            color: var(--blanco);
+        }
+
+        .card.gold h3, .card.gold .price, .card.gold ul li::before {
+            color: var(--dorado-acento);
+        }
+        .card.gold .btn-card {
+            border-color: var(--dorado-acento);
+            color: var(--dorado-acento);
+        }
+        .card.gold .btn-card:hover {
+            background: var(--dorado-acento);
+            color: var(--blanco);
+        }
+
+        .btn-card {
+            display: block;
+            text-align: center;
+            padding: 11px;
+            border: 1px solid var(--azul-marca);
+            color: var(--azul-marca);
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-card:hover {
+            background: var(--azul-marca);
+            color: var(--blanco);
+        }
+
+        /* Cómo Comprar & Formas de Pago */
+        .info-band {
+            background-color: var(--azul-suave);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            text-align: center;
+        }
+
+        .step-box {
+            background: var(--blanco);
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background: var(--azul-marca);
+            color: var(--blanco);
+            border-radius: 50%;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .payment-methods {
+            margin-top: 45px;
